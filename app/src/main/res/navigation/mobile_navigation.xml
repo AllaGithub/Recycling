@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/receivedFragment">
+
+    <fragment
+        android:id="@+id/receivedFragment"
+        android:name="ua.com.eco_lab.recycling.ui.received.ReceivedFragment"
+        android:label="@string/menu_received"
+        tools:layout="@layout/received_fragment" >
+
+        <action
+            android:id="@+id/action_receivedFragment_to_addReceiptFragment"
+            app:destination="@id/addReceiptFragment"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/storageFragment"
+        android:name="ua.com.eco_lab.recycling.ui.storage.StorageFragment"
+        android:label="@string/menu_storage"
+        tools:layout="@layout/storage_fragment" />
+
+    <fragment
+        android:id="@+id/turnoverFragment"
+        android:name="ua.com.eco_lab.recycling.ui.turnover.TurnoverFragment"
+        android:label="@string/menu_turnover"
+        tools:layout="@layout/turnover_fragment" />
+
+    <fragment
+        android:id="@+id/workFragment"
+        android:name="ua.com.eco_lab.recycling.ui.work.WorkFragment"
+        android:label="@string/menu_work"
+        tools:layout="@layout/work_fragment" />
+
+    <fragment
+        android:id="@+id/addReceiptFragment"
+        android:name="ua.com.eco_lab.recycling.ui.addreceipt.AddReceiptFragment"
+        android:label="@string/add_receipt_title"
+        tools:layout="@layout/add_receipt_fragment" />
+
+    <fragment
+        android:id="@+id/addReceiptEquipmentFragment"
+        android:name="ua.com.eco_lab.recycling.ui.addreceipt.AddReceiptEquipmentFragment"
+        android:label="@string/add_receipt_title"
+        tools:layout="@layout/add_receipt_equipment_fragment" >
+
+        <action
+            android:id="@+id/action_addReceiptEquipmentFragment_to_receivedFragment"
+            app:destination="@id/receivedFragment"
+            app:popUpTo="@+id/mobile_navigation"
+            app:popUpToInclusive="true"/>
+
+
+
+    </fragment>
+
+</navigation>

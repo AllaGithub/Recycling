@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "712221552311",
+    "firebase_url": "https://recycling-d2ab8.firebaseio.com",
+    "project_id": "recycling-d2ab8",
+    "storage_bucket": "recycling-d2ab8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712221552311:android:5c4985a0a0fdd31b",
+        "android_client_info": {
+          "package_name": "ua.com.eco_lab.recycling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712221552311-05ppdi5s8kt6k43hqbvgstmorttptgri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0u2FkCol9DPDKuMaM5XQo0zErC3oulVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712221552311-05ppdi5s8kt6k43hqbvgstmorttptgri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

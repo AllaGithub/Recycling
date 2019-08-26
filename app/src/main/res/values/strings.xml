@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Recycling</string>
+    <string name="nav_header_title">Переработка</string>
+    <string name="nav_header_subtitle">yn@eco-lab.com.ua</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Настройки</string>
+
+    <string name="menu_received">Приход</string>
+    <string name="menu_storage">Склад</string>
+    <string name="menu_turnover">Оборот</string>
+    <string name="menu_work">Наряды</string>
+
+    <string name="add_receipt_title">Добавить приход</string>
+
+    <string name="add_receipt_donor_hint">Здавальщик</string>
+    <string name="add_receipt_dater_hint">Дата</string>
+    <string name="add_receipt_next">Далее</string>
+    <string name="add_receipt_ready">Готово</string>
+    <string name="add_receipt_next_eq">Добавить еще</string>
+    <string name="add_receipt_name_eq">Наименование ЭО</string>
+    <string name="add_receipt_id_eq">Зав./инв.№</string>
+    <string name="add_receipt_id_inner_eq">Внутр.№</string>
+    <string name="add_receipt_weight_eq">Вес, кг</string>
+    <string name="add_receipt_missing_components">Отсутствующие компоненты</string>
+    <string name="add_receipt_existing_components">Наличие только данных компонентов</string>
+    <string name="add_receipt_comments">Примечание</string>
+
+    <string name="cancel">Отмена</string>
+</resources>
