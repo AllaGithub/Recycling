@@ -10,7 +10,7 @@ data class EquipmentEntity (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: String,
+    val id: String?,
 
     @ColumnInfo(name = "inner_id")
     val innerId: String?,
@@ -25,5 +25,5 @@ data class EquipmentEntity (
     val comments: String?,
 
     @ColumnInfo(name = "receipt_id")
-    val receiptId: String
+    val receiptId: String?
 )

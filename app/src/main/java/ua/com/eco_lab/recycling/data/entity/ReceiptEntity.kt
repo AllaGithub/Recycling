@@ -11,11 +11,11 @@ data class ReceiptEntity(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: String,
+    val id: String?,
 
     @ColumnInfo(name = "donor_name")
-    val donorName: String,
+    val donorName: String?,
 
     @ColumnInfo(name = "date_received")
-    val dateReceived: Date
+    val dateReceived: Date?
 )

@@ -13,5 +13,5 @@ interface ReceiptDao {
     fun getAllReceipts(): List<ReceiptEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(receipt: ReceiptEntity)
+    fun insert(receipt: ReceiptEntity): Long
 }

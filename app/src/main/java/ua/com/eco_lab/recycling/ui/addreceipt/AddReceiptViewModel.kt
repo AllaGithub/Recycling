@@ -1,18 +1,23 @@
 package ua.com.eco_lab.recycling.ui.addreceipt
 
+import android.app.Application
 import android.app.DatePickerDialog
 import android.content.Context
 import android.view.View
 import android.widget.DatePicker
 import androidx.lifecycle.MutableLiveData
 import ua.com.eco_lab.recycling.R
+import ua.com.eco_lab.recycling.data.AppRoomDatabase
+import ua.com.eco_lab.recycling.data.repository.ReceiptRepository
 import ua.com.eco_lab.recycling.model.Equipment
 import ua.com.eco_lab.recycling.model.Receipt
 import ua.com.eco_lab.recycling.observable.SingleLiveEvent
 import ua.com.eco_lab.recycling.ui.BaseViewModel
 import java.util.*
 
-class AddReceiptViewModel : BaseViewModel(), DatePickerDialog.OnDateSetListener {
+class AddReceiptViewModel(application: Application) : BaseViewModel(application), DatePickerDialog.OnDateSetListener {
+
+    private val receiptRepository: ReceiptRepository
 
 
     var receipt: MutableLiveData<Receipt>? = null
@@ -39,6 +44,10 @@ class AddReceiptViewModel : BaseViewModel(), DatePickerDialog.OnDateSetListener 
 
     init {
         receipt?.value = Receipt()
+
+        val receiptsDao = AppRoomDatabase.getDatabase(application).receiptDao()
+        val equipmentDao = AppRoomDatabase.getDatabase(application).equipmentDao()
+        receiptRepository = ReceiptRepository(receiptsDao, equipmentDao)
     }
 
 

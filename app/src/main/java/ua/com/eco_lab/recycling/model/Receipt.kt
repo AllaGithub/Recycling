@@ -10,7 +10,7 @@ import java.util.*
 class Receipt: BaseObservable() {
 
     @SerializedName("id")
-    var id: Long? = null
+    var id: String? = null
         @Bindable get() {
             return field
         }

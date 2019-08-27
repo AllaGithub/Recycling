@@ -1,17 +1,13 @@
 package ua.com.eco_lab.recycling.ui
 
-import androidx.lifecycle.ViewModel
-import io.reactivex.disposables.CompositeDisposable
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import ua.com.eco_lab.recycling.RecyclingNavigator
-import ua.com.eco_lab.recycling.rx.SchedulerProvider
 import java.lang.ref.WeakReference
 
-open class BaseViewModel : ViewModel() {
+open class BaseViewModel(application: Application) : AndroidViewModel(application) {
 
     var recNavigator: WeakReference<RecyclingNavigator>? = null
-    var compositeDisposable: CompositeDisposable = CompositeDisposable()
-    var schedulerProvider: SchedulerProvider = SchedulerProvider()
-
 
     fun setNavigator(navigator: RecyclingNavigator) {
         recNavigator = WeakReference(navigator)
@@ -23,8 +19,4 @@ open class BaseViewModel : ViewModel() {
         }
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        compositeDisposable.clear()
-    }
 }

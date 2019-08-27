@@ -13,5 +13,8 @@ interface EquipmentDao {
     fun getAllEquipmentByReceiptId(receiptId: String): List<EquipmentEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(equipment: EquipmentEntity)
+    fun insert(equipment: EquipmentEntity): Long
+
+    @Insert
+    fun insertAllEquipment(equipmentList: List<EquipmentEntity>)
 }
