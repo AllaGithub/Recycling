@@ -41,12 +41,12 @@ class AddReceiptEquipmentFragment : BaseFragment() {
 
         addReceiptViewModel.clearAllFieldsEvent.observe(viewLifecycleOwner, Observer {
             et_eq_name.setText("")
-            et_id.setText("")
-            et_id_inner.setText("")
-            et_weight.setText("")
-            et_missing.setText("")
-            et_existing.setText("")
-            et_comments.setText("")
+//            et_id.setText("")
+//            et_id_inner.setText("")
+//            et_weight.setText("")
+//            et_missing.setText("")
+//            et_existing.setText("")
+//            et_comments.setText("")
         })
 
     }

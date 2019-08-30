@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import ua.com.eco_lab.recycling.data.AppRoomDatabase.Companion.DATABASE_VERSION
 import ua.com.eco_lab.recycling.data.dao.EquipmentDao
 import ua.com.eco_lab.recycling.data.dao.ReceiptDao
@@ -11,6 +12,7 @@ import ua.com.eco_lab.recycling.data.entity.EquipmentEntity
 import ua.com.eco_lab.recycling.data.entity.ReceiptEntity
 
 @Database(entities = [ReceiptEntity::class, EquipmentEntity::class], version = DATABASE_VERSION)
+@TypeConverters(DateConverter::class)
 abstract class AppRoomDatabase : RoomDatabase() {
 
 

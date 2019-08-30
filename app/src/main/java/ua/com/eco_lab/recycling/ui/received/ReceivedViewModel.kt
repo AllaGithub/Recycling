@@ -1,17 +1,30 @@
 package ua.com.eco_lab.recycling.ui.received
 
 import android.app.Application
-import ua.com.eco_lab.recycling.data.AppRoomDatabase
-import ua.com.eco_lab.recycling.data.repository.ReceiptRepository
+import androidx.lifecycle.MutableLiveData
+import ua.com.eco_lab.recycling.mapper.ReceiptMapper
+import ua.com.eco_lab.recycling.model.Receipt
 import ua.com.eco_lab.recycling.ui.BaseViewModel
 
 class ReceivedViewModel(application: Application) : BaseViewModel(application) {
 
-    private val receiptRepository: ReceiptRepository
+    var receiptList: MutableLiveData<List<Receipt>>? = null
+        get() {
+            if (field == null) {
+                field = MutableLiveData()
+                field?.value = arrayListOf()
+            }
 
-    init {
-        val receiptsDao = AppRoomDatabase.getDatabase(application).receiptDao()
-        val equipmentDao = AppRoomDatabase.getDatabase(application).equipmentDao()
-        receiptRepository = ReceiptRepository(receiptsDao, equipmentDao)
+            return field
+        }
+
+    fun refreshData() {
+        receiptRepository.getAllReceipt()
+            .compose(schedulerProvider.ioToMainSingleScheduler())
+            .subscribe { list, t ->
+                receiptList?.value = list.map { ReceiptMapper.parse(it) }
+
+            }.apply { compositeDisposable.add(this) }
+
     }
 }

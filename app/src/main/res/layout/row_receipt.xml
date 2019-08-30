@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="receipt"
+            type="ua.com.eco_lab.recycling.model.Receipt" />
+
+        <import type="ua.com.eco_lab.recycling.helper.DateHelper" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDonorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_half"
+            android:singleLine="true"
+            android:text="@{receipt.donorName}"
+            tools:text="Farmak" />
+
+        <TextView
+            android:id="@+id/tvDateReceived"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_half"
+            android:layout_marginEnd="@dimen/padding_half"
+            android:layout_marginBottom="@dimen/padding_half"
+            android:singleLine="true"
+            android:text="@{DateHelper.getDisplayDateShort(receipt.dateReceived)}"
+            tools:text="Sept 2, 2019" />
+
+    </LinearLayout>
+
+</layout>

@@ -10,7 +10,7 @@ data class EquipmentEntity (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: String?,
+    val id: Long?,
 
     @ColumnInfo(name = "inner_id")
     val innerId: String?,

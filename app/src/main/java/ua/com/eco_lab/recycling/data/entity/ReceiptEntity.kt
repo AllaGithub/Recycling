@@ -11,7 +11,7 @@ data class ReceiptEntity(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: String?,
+    val id: Long?,
 
     @ColumnInfo(name = "donor_name")
     val donorName: String?,

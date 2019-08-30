@@ -44,137 +44,137 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
-                android:hint="@string/add_receipt_id_eq"
-                android:layout_margin="@dimen/til_edittext_margins">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:hint="@string/add_receipt_id_eq"-->
+<!--                android:layout_margin="@dimen/til_edittext_margins">-->
 
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/add_receipt_text_size"
-                    android:background="@android:color/transparent"
-                    android:layout_margin="@dimen/edittext_margins"
-                    android:text="@{vm.equipment.id}"
-                    />
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/et_id"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="@dimen/add_receipt_text_size"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:layout_margin="@dimen/edittext_margins"-->
+<!--                    android:text="@{vm.equipment.id}"-->
+<!--                    />-->
 
-            </com.google.android.material.textfield.TextInputLayout>
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
-                android:hint="@string/add_receipt_id_inner_eq"
-                android:layout_margin="@dimen/til_edittext_margins">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_id_inner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/add_receipt_text_size"
-                    android:background="@android:color/transparent"
-                    android:layout_margin="@dimen/edittext_margins"
-                    android:text="@{vm.equipment.innerId}"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
-                android:hint="@string/add_receipt_weight_eq"
-                android:layout_margin="@dimen/til_edittext_margins">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:hint="@string/add_receipt_id_inner_eq"-->
+<!--                android:layout_margin="@dimen/til_edittext_margins">-->
 
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_weight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/add_receipt_text_size"
-                    android:background="@android:color/transparent"
-                    android:layout_margin="@dimen/edittext_margins"
-                    android:digits="0123456789."
-                    />
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/et_id_inner"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="@dimen/add_receipt_text_size"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:layout_margin="@dimen/edittext_margins"-->
+<!--                    android:text="@{vm.equipment.innerId}"-->
+<!--                    />-->
 
-            </com.google.android.material.textfield.TextInputLayout>
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
-                android:hint="@string/add_receipt_missing_components"
-                android:layout_margin="@dimen/til_edittext_margins">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_missing"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/add_receipt_text_size"
-                    android:background="@android:color/transparent"
-                    android:layout_margin="@dimen/edittext_margins"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
-                android:hint="@string/add_receipt_existing_components"
-                android:layout_margin="@dimen/til_edittext_margins">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:hint="@string/add_receipt_weight_eq"-->
+<!--                android:layout_margin="@dimen/til_edittext_margins">-->
 
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_existing"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/add_receipt_text_size"
-                    android:background="@android:color/transparent"
-                    android:layout_margin="@dimen/edittext_margins"
-                    />
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/et_weight"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="@dimen/add_receipt_text_size"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:layout_margin="@dimen/edittext_margins"-->
+<!--                    android:digits="0123456789."-->
+<!--                    />-->
 
-            </com.google.android.material.textfield.TextInputLayout>
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
-                android:hint="@string/add_receipt_comments"
-                android:layout_margin="@dimen/til_edittext_margins">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:hint="@string/add_receipt_missing_components"-->
+<!--                android:layout_margin="@dimen/til_edittext_margins">-->
 
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_comments"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/add_receipt_text_size"
-                    android:background="@android:color/transparent"
-                    android:layout_margin="@dimen/edittext_margins"
-                    android:text="@{vm.equipment.comments}"
-                    />
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/et_missing"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="@dimen/add_receipt_text_size"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:layout_margin="@dimen/edittext_margins"-->
+<!--                    />-->
 
-            </com.google.android.material.textfield.TextInputLayout>
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <Button
-                android:id="@+id/btn_more"
-                style="@style/MaterialButton.Unelevated"
-                android:layout_margin="@dimen/material_button_margins"
-                android:text="@string/add_receipt_next_eq"
-                android:onClick="@{vm::nextEquipment}"/>
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:hint="@string/add_receipt_existing_components"-->
+<!--                android:layout_margin="@dimen/til_edittext_margins">-->
 
-            <Button
-                android:id="@+id/btn_done"
-                style="@style/MaterialButton.Unelevated"
-                android:layout_margin="@dimen/material_button_margins"
-                android:text="@string/add_receipt_ready"
-                android:onClick="@{vm::finishAddingEquipment}"/>
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/et_existing"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="@dimen/add_receipt_text_size"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:layout_margin="@dimen/edittext_margins"-->
+<!--                    />-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:hint="@string/add_receipt_comments"-->
+<!--                android:layout_margin="@dimen/til_edittext_margins">-->
+
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/et_comments"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="@dimen/add_receipt_text_size"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:layout_margin="@dimen/edittext_margins"-->
+<!--                    android:text="@{vm.equipment.comments}"-->
+<!--                    />-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_more"-->
+<!--                style="@style/MaterialButton.Unelevated"-->
+<!--                android:layout_margin="@dimen/material_button_margins"-->
+<!--                android:text="@string/add_receipt_next_eq"-->
+<!--                android:onClick="@{vm::nextEquipment}"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_done"-->
+<!--                style="@style/MaterialButton.Unelevated"-->
+<!--                android:layout_margin="@dimen/material_button_margins"-->
+<!--                android:text="@string/add_receipt_ready"-->
+<!--                android:onClick="@{vm::finishAddingEquipment}"/>-->
 
         </LinearLayout>
 

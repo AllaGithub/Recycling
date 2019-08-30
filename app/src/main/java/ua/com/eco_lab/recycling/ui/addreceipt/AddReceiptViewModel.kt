@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.DatePicker
 import androidx.lifecycle.MutableLiveData
 import ua.com.eco_lab.recycling.R
-import ua.com.eco_lab.recycling.data.AppRoomDatabase
-import ua.com.eco_lab.recycling.data.repository.ReceiptRepository
+import ua.com.eco_lab.recycling.mapper.EquipmentMapper
+import ua.com.eco_lab.recycling.mapper.ReceiptMapper
 import ua.com.eco_lab.recycling.model.Equipment
 import ua.com.eco_lab.recycling.model.Receipt
 import ua.com.eco_lab.recycling.observable.SingleLiveEvent
@@ -16,8 +16,6 @@ import ua.com.eco_lab.recycling.ui.BaseViewModel
 import java.util.*
 
 class AddReceiptViewModel(application: Application) : BaseViewModel(application), DatePickerDialog.OnDateSetListener {
-
-    private val receiptRepository: ReceiptRepository
 
 
     var receipt: MutableLiveData<Receipt>? = null
@@ -44,10 +42,7 @@ class AddReceiptViewModel(application: Application) : BaseViewModel(application)
 
     init {
         receipt?.value = Receipt()
-
-        val receiptsDao = AppRoomDatabase.getDatabase(application).receiptDao()
-        val equipmentDao = AppRoomDatabase.getDatabase(application).equipmentDao()
-        receiptRepository = ReceiptRepository(receiptsDao, equipmentDao)
+        equipment?.value = Equipment()
     }
 
 
@@ -74,17 +69,47 @@ class AddReceiptViewModel(application: Application) : BaseViewModel(application)
 
     @Suppress("UNUSED_PARAMETER")
     fun nextEquipment(view: View) {
-        equipment?.value?.let { receipt?.value?.equipments?.add(it) }
-//todo: send equipment to BE
-        clearAllFieldsEvent.call()
-        scrollUpEvent.call()
+        // checking if it's first add, then we add receipt
+        if (receipt?.value?.equipments == null || receipt?.value?.equipments?.isEmpty() == true) {
+            // add receipt to the DB, save id to the mutable data and then add equipment to the DB
+            equipment?.value?.let { receipt?.value?.equipments?.add(it) }
 
+            receipt?.value?.let {
+                receiptRepository.insertReceipt(ReceiptMapper.parse(it))
+                    .compose(schedulerProvider.ioToMainSingleScheduler())
+                    .subscribe { id ->
+                        receipt?.value?.id = id
+
+                        saveEquipment(true)
+
+
+                    }.apply { compositeDisposable.add(this) }
+            }
+        } else {
+            // add equipment
+            equipment?.value?.let { receipt?.value?.equipments?.add(it) }
+            saveEquipment(true)
+        }
     }
+
+    private fun saveEquipment(addNextEquipment: Boolean) {
+        equipment?.value?.let {
+            receiptRepository.insertEquipment(EquipmentMapper.parse(it))
+                .compose(schedulerProvider.ioToMainCompletableScheduler())
+                .subscribe {
+                    if (addNextEquipment) {
+                        clearAllFieldsEvent.call()
+                        scrollUpEvent.call()
+                    }
+                }.apply { compositeDisposable.add(this) }
+        }
+    }
+
 
     @Suppress("UNUSED_PARAMETER")
     fun finishAddingEquipment(view: View) {
         equipment?.value?.let { receipt?.value?.equipments?.add(it) }
-        //todo: send last equipment to BE
+        saveEquipment(false)
         recNavigator?.get()?.navigate(R.id.action_addReceiptEquipmentFragment_to_receivedFragment)
     }
 

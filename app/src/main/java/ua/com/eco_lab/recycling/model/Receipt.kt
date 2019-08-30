@@ -2,6 +2,7 @@ package ua.com.eco_lab.recycling.model
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
+import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
 import ua.com.eco_lab.recycling.BR
 import java.util.*
@@ -10,7 +11,7 @@ import java.util.*
 class Receipt: BaseObservable() {
 
     @SerializedName("id")
-    var id: String? = null
+    var id: Long? = null
         @Bindable get() {
             return field
         }
@@ -48,4 +49,16 @@ class Receipt: BaseObservable() {
             field = value
             notifyPropertyChanged(BR.equipments)
         }
+
+    companion object {
+        val diffCallback: DiffUtil.ItemCallback<Receipt> = object : DiffUtil.ItemCallback<Receipt>() {
+            override fun areItemsTheSame(oldItem: Receipt, newItem: Receipt): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: Receipt, newItem: Receipt): Boolean {
+                return oldItem.id == newItem.id
+            }
+        }
+    }
 }
