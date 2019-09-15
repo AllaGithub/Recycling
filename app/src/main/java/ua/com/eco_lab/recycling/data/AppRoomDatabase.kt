@@ -11,7 +11,7 @@ import ua.com.eco_lab.recycling.data.dao.ReceiptDao
 import ua.com.eco_lab.recycling.data.entity.EquipmentEntity
 import ua.com.eco_lab.recycling.data.entity.ReceiptEntity
 
-@Database(entities = [ReceiptEntity::class, EquipmentEntity::class], version = DATABASE_VERSION)
+@Database(entities = [ReceiptEntity::class, EquipmentEntity::class], version = DATABASE_VERSION, exportSchema = false)
 @TypeConverters(DateConverter::class)
 abstract class AppRoomDatabase : RoomDatabase() {
 

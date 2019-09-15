@@ -41,8 +41,12 @@ class AddReceiptViewModel(application: Application) : BaseViewModel(application)
     val scrollUpEvent = SingleLiveEvent<Void>()
 
     init {
-        receipt?.value = Receipt()
-        equipment?.value = Equipment()
+        if (receipt?.value == null) {
+            receipt?.value = Receipt()
+        }
+        if (equipment?.value == null) {
+            equipment?.value = Equipment()
+        }
     }
 
 

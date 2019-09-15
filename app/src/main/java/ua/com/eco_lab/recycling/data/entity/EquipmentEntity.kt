@@ -8,9 +8,10 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "equipment_table")
 data class EquipmentEntity (
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    val id: Long?,
+
+
+    @ColumnInfo(name = "inventory_id")
+    val inventoryId: String?,
 
     @ColumnInfo(name = "inner_id")
     val innerId: String?,
@@ -26,4 +27,8 @@ data class EquipmentEntity (
 
     @ColumnInfo(name = "receipt_id")
     val receiptId: String?
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    var id: Long = 0
+}
