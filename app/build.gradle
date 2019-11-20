@@ -91,6 +91,9 @@ dependencies {
 
     // RxJava support for Room
     implementation "android.arch.persistence.room:rxjava2:1.1.1"
+
+    //stetho
+    implementation 'com.facebook.stetho:stetho:1.5.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

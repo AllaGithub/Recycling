@@ -13,7 +13,7 @@ abstract class AddReceiptBaseFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         activity?.let {
-            addReceiptViewModel = ViewModelProviders.of(this).get(AddReceiptViewModel::class.java)
+            addReceiptViewModel = ViewModelProviders.of(it).get(AddReceiptViewModel::class.java)
         }
     }
 

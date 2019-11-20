@@ -6,6 +6,7 @@ import androidx.navigation.fragment.findNavController
 import ua.com.eco_lab.recycling.RecyclingNavigator
 
 open class BaseFragment : Fragment(), RecyclingNavigator {
+
     override fun navigate(destination: NavDirections) {
         findNavController().navigate(destination)
     }

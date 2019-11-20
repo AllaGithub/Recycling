@@ -36,7 +36,12 @@ class AddReceiptFragment : AddReceiptBaseFragment() {
 
     fun setDate(view: View) {
         view.hideKeyboard()
-        addReceiptViewModel?.setDate(context!!)
+        context?.let{addReceiptViewModel?.setDate(it)}
+
+    }
+
+    override fun onPause() {
+        super.onPause()
     }
 
 

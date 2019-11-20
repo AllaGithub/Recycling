@@ -36,6 +36,8 @@ class AddReceiptViewModel(application: Application) : BaseViewModel(application)
             return field
         }
 
+    var isReceiptAddedToDb: Boolean = false
+
 
     val clearAllFieldsEvent = SingleLiveEvent<Void>()
     val scrollUpEvent = SingleLiveEvent<Void>()
@@ -82,6 +84,9 @@ class AddReceiptViewModel(application: Application) : BaseViewModel(application)
                 receiptRepository.insertReceipt(ReceiptMapper.parse(it))
                     .compose(schedulerProvider.ioToMainSingleScheduler())
                     .subscribe { id ->
+
+                        isReceiptAddedToDb = true
+
                         receipt?.value?.id = id
 
                         saveEquipment(true)
@@ -104,6 +109,8 @@ class AddReceiptViewModel(application: Application) : BaseViewModel(application)
                     if (addNextEquipment) {
                         clearAllFieldsEvent.call()
                         scrollUpEvent.call()
+                    } else {
+                        recNavigator?.get()?.navigate(R.id.action_addReceiptEquipmentFragment_to_receivedFragment)
                     }
                 }.apply { compositeDisposable.add(this) }
         }
@@ -112,9 +119,29 @@ class AddReceiptViewModel(application: Application) : BaseViewModel(application)
 
     @Suppress("UNUSED_PARAMETER")
     fun finishAddingEquipment(view: View) {
+
         equipment?.value?.let { receipt?.value?.equipments?.add(it) }
-        saveEquipment(false)
-        recNavigator?.get()?.navigate(R.id.action_addReceiptEquipmentFragment_to_receivedFragment)
+
+
+        if (!isReceiptAddedToDb) {
+            receipt?.value?.let {
+                receiptRepository.insertReceipt(ReceiptMapper.parse(it))
+                    .compose(schedulerProvider.ioToMainSingleScheduler())
+                    .subscribe { id ->
+
+                        isReceiptAddedToDb = true
+
+                        receipt?.value?.id = id
+
+                        saveEquipment(false)
+
+                    }.apply { compositeDisposable.add(this) }
+            }
+        } else {
+
+            saveEquipment(false)
+
+        }
     }
 
 }
