@@ -8,8 +8,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "equipment_table")
 data class EquipmentEntity (
 
-
-
     @ColumnInfo(name = "inventory_id")
     val inventoryId: String?,
 

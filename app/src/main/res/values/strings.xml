@@ -25,5 +25,14 @@
     <string name="add_receipt_existing_components">Наличие только данных компонентов</string>
     <string name="add_receipt_comments">Примечание</string>
 
+
+    <string name="equipment_name_title">Наименование:</string>
+    <string name="equipment_inventory_title">Инв.№:</string>
+    <string name="equipment_weight_title">Вес:</string>
+
+    <string name="storage_source">Исходное сырье</string>
+    <string name="storage_middle">Промежуточные материалы</string>
+    <string name="storage_end">Конечные материалы</string>
+
     <string name="cancel">Отмена</string>
 </resources>

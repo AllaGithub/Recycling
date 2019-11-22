@@ -14,7 +14,7 @@ class ReceiptRepository(val receiptDao: ReceiptDao, val equipmentDao: EquipmentD
         return receiptDao.getAllReceipts()
     }
 
-    fun getAllEquipmentByReceiptId(receiptId: String): Single<List<EquipmentEntity>> {
+    fun getAllEquipmentByReceiptId(receiptId: Long): Single<List<EquipmentEntity>> {
         return equipmentDao.getAllEquipmentByReceiptId(receiptId)
     }
 

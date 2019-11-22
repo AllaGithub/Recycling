@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.received_fragment.*
 import ua.com.eco_lab.recycling.adapter.ReceiptAdapter
@@ -63,7 +64,9 @@ class ReceivedFragment : BaseFragment(), GenericListener<Receipt> {
     }
 
     override fun onItemSelected(adapter: RecyclerView.Adapter<*>, value: Receipt, position: Int) {
-        //todo
+        value.id?.let {
+            findNavController().navigate(ReceivedFragmentDirections.actionReceivedFragmentToEquipmentFragment(it))
+        }
     }
 
     private fun setupAdapter() {

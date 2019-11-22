@@ -40,7 +40,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/row_separator_height"
             android:background="@color/light_grey"
             android:layout_marginStart="@dimen/padding_half"
             android:layout_marginEnd="@dimen/padding_half"

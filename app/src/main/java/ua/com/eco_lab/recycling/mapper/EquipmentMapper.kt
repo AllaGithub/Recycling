@@ -10,6 +10,14 @@ object EquipmentMapper {
     }
 
     fun parse(entity: EquipmentEntity): Equipment {
-        return Equipment(entity.id, entity.inventoryId, entity.innerId, entity.name, entity.weight, entity.comments, entity.receiptId)
+        val eq = Equipment()
+        eq.id = entity.id
+        eq.comments = entity.comments
+        eq.inventoryId = entity.inventoryId
+        eq.innerId = entity.innerId
+        eq.name = entity.name
+        eq.weight = entity.weight
+        eq.receiptId = entity.receiptId
+        return eq
     }
 }

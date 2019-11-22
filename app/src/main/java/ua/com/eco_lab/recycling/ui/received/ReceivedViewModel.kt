@@ -22,7 +22,9 @@ class ReceivedViewModel(application: Application) : BaseViewModel(application) {
         receiptRepository.getAllReceipt()
             .compose(schedulerProvider.ioToMainSingleScheduler())
             .subscribe { list, t ->
-                receiptList?.value = list.map { ReceiptMapper.parse(it) }
+                if (!list.isNullOrEmpty()) {
+                    receiptList?.value = list.map { ReceiptMapper.parse(it) }
+                }
 
             }.apply { compositeDisposable.add(this) }
 

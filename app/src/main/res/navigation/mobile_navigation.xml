@@ -15,6 +15,23 @@
             android:id="@+id/action_receivedFragment_to_addReceiptFragment"
             app:destination="@id/addReceiptFragment"/>
 
+        <action
+            android:id="@+id/action_receivedFragment_to_equipmentFragment"
+            app:destination="@id/equipmentFragment"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/equipmentFragment"
+        android:name="ua.com.eco_lab.recycling.ui.received.ReceivedEquipmentFragment"
+        android:label="@string/menu_received"
+        tools:layout="@layout/received_equipment_fragment" >
+
+        <argument
+            android:name="receiptId"
+            app:argType="long"
+            app:nullable="false" />
 
     </fragment>
 

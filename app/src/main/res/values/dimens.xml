@@ -29,4 +29,6 @@
     <dimen name="dialog_fragment_width">280dp</dimen>
 
     <dimen name="button_height">60dp</dimen>
+
+    <dimen name="row_separator_height">2dp</dimen>
 </resources>

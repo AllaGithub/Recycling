@@ -11,8 +11,9 @@ import ua.com.eco_lab.recycling.data.entity.EquipmentEntity
 @Dao
 interface EquipmentDao {
 
+    //@Query("SELECT * FROM equipment_table WHERE receipt_id = :receiptId")
     @Query("SELECT * FROM equipment_table WHERE receipt_id = :receiptId")
-    fun getAllEquipmentByReceiptId(receiptId: String): Single<List<EquipmentEntity>>
+    fun getAllEquipmentByReceiptId(receiptId: Long): Single<List<EquipmentEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(equipment: EquipmentEntity): Single<Long>
