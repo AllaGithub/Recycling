@@ -38,6 +38,14 @@
             android:text="@{DateHelper.getDisplayDateShort(receipt.dateReceived)}"
             tools:text="Sept 2, 2019" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/light_grey"
+            android:layout_marginStart="@dimen/padding_half"
+            android:layout_marginEnd="@dimen/padding_half"
+            />
+
     </LinearLayout>
 
 </layout>

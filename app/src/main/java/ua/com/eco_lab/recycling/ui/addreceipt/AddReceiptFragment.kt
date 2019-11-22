@@ -11,8 +11,6 @@ class AddReceiptFragment : AddReceiptBaseFragment() {
 
     private lateinit var binding: AddReceiptFragmentBinding
 
-    //private lateinit var addReceiptViewModel: AddReceiptViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,8 +25,6 @@ class AddReceiptFragment : AddReceiptBaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //addReceiptViewModel = ViewModelProviders.of(this).get(AddReceiptViewModel::class.java)
-
         binding.vm = addReceiptViewModel
 
     }

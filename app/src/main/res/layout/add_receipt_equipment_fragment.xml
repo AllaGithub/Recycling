@@ -39,7 +39,7 @@
                     android:textSize="@dimen/add_receipt_text_size"
                     android:background="@android:color/transparent"
                     android:layout_margin="@dimen/edittext_margins"
-                    android:text="@{vm.equipment.name}"
+                    android:text="@={vm.equipment.name}"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -59,7 +59,7 @@
                     android:textSize="@dimen/add_receipt_text_size"
                     android:background="@android:color/transparent"
                     android:layout_margin="@dimen/edittext_margins"
-                    android:text="@{vm.equipment.inventoryId}"
+                    android:text="@={vm.equipment.inventoryId}"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -79,7 +79,7 @@
                     android:textSize="@dimen/add_receipt_text_size"
                     android:background="@android:color/transparent"
                     android:layout_margin="@dimen/edittext_margins"
-                    android:text="@{vm.equipment.innerId}"
+                    android:text="@={vm.equipment.innerId}"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -99,6 +99,7 @@
                     android:textSize="@dimen/add_receipt_text_size"
                     android:background="@android:color/transparent"
                     android:layout_margin="@dimen/edittext_margins"
+                    android:text="@={vm.equipment.weight}"
                     android:digits="0123456789."
                     />
 
@@ -157,7 +158,7 @@
                     android:textSize="@dimen/add_receipt_text_size"
                     android:background="@android:color/transparent"
                     android:layout_margin="@dimen/edittext_margins"
-                    android:text="@{vm.equipment.comments}"
+                    android:text="@={vm.equipment.comments}"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>

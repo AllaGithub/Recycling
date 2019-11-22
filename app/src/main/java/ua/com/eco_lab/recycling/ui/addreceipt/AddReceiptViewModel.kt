@@ -101,8 +101,12 @@ class AddReceiptViewModel(application: Application) : BaseViewModel(application)
         }
     }
 
+    //call after receipt is saved to get the receiptId
     private fun saveEquipment(addNextEquipment: Boolean) {
         equipment?.value?.let {
+
+            it.receiptId = receipt?.value?.id
+
             receiptRepository.insertEquipment(EquipmentMapper.parse(it))
                 .compose(schedulerProvider.ioToMainCompletableScheduler())
                 .subscribe {

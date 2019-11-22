@@ -20,13 +20,13 @@ data class EquipmentEntity (
     val name: String?,
 
     @ColumnInfo(name = "weight")
-    val weight: Double?,
+    val weight: String?,
 
     @ColumnInfo(name = "comments")
     val comments: String?,
 
     @ColumnInfo(name = "receipt_id")
-    val receiptId: String?
+    val receiptId: Long?
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

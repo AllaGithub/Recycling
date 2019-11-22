@@ -14,8 +14,6 @@ class AddReceiptEquipmentFragment : AddReceiptBaseFragment() {
 
     private lateinit var binding: AddReceiptEquipmentFragmentBinding
 
-    //private lateinit var addReceiptViewModel: AddReceiptViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,7 +27,6 @@ class AddReceiptEquipmentFragment : AddReceiptBaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //addReceiptViewModel = ViewModelProviders.of(this).get(AddReceiptViewModel::class.java)
 
         binding.vm = addReceiptViewModel
 
@@ -49,13 +46,4 @@ class AddReceiptEquipmentFragment : AddReceiptBaseFragment() {
 
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        addReceiptViewModel.setNavigator(this)
-//    }
-//
-//    override fun onPause() {
-//        super.onPause()
-//        addReceiptViewModel.removeNavigator(this)
-//    }
 }

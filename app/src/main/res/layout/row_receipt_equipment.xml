@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="equipment"
+            type="ua.com.eco_lab.recycling.model.Equipment" />
+
+        <import type="ua.com.eco_lab.recycling.helper.DateHelper" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvEquipmentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_half"
+            android:singleLine="true"
+            android:text="@{equipment.name}"
+            tools:text="Notebook" />
+
+        <TextView
+            android:id="@+id/tvInventoryId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_half"
+            android:layout_marginEnd="@dimen/padding_half"
+            android:layout_marginBottom="@dimen/padding_half"
+            android:singleLine="true"
+            android:text="@{equipment.inventoryId}"
+            tools:text="123" />
+
+        <TextView
+            android:id="@+id/tvWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_half"
+            android:layout_marginEnd="@dimen/padding_half"
+            android:layout_marginBottom="@dimen/padding_half"
+            android:singleLine="true"
+            android:text="@{equipment.weight}"
+            tools:text="5.5" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/light_grey"
+            android:layout_marginStart="@dimen/padding_half"
+            android:layout_marginEnd="@dimen/padding_half"
+            />
+
+    </LinearLayout>
+
+</layout>

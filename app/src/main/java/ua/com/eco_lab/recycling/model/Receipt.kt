@@ -8,7 +8,7 @@ import ua.com.eco_lab.recycling.BR
 import java.util.*
 
 
-class Receipt(): BaseObservable() {
+class Receipt : BaseObservable() {
 
     @SerializedName("id")
     var id: Long? = null
